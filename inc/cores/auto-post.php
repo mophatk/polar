@@ -164,12 +164,12 @@ $auto_publish_pages = (empty($account_details['page_group_lists']))?array(1):$ac
 $user_data = (empty($account_details['user_data']))?array(1):$account_details['user_data'];
 $send = array();
 $user_data = (array) json_decode($user_data);
-$fap_user_accounts = (empty($user_data['fap_user_accounts']))?array(1):$user_data['fap_user_accounts'];
-$fap_user_accounts = (array)$fap_user_accounts;
-$auth_tokens = (empty($fap_user_accounts['auth_tokens']))?array(1):$fap_user_accounts['auth_tokens'];
-$auth_accounts =(empty($fap_user_accounts['auth_accounts']))?array(1):$fap_user_accounts['auth_accounts'];
-$fap_auth_tokens = (array)$auth_tokens;
-$fap_auth_accounts = (array)$auth_accounts;
+$polar_user_accounts = (empty($user_data['polar_user_accounts']))?array(1):$user_data['polar_user_accounts'];
+$polar_user_accounts = (array)$polar_user_accounts;
+$auth_tokens = (empty($polar_user_accounts['auth_tokens']))?array(1):$polar_user_accounts['auth_tokens'];
+$auth_accounts =(empty($polar_user_accounts['auth_accounts']))?array(1):$polar_user_accounts['auth_accounts'];
+$polar_auth_tokens = (array)$auth_tokens;
+$polar_auth_accounts = (array)$auth_accounts;
 if (is_array($auto_publish_pages) && !empty($auto_publish_pages)) {
         $facebook_api = new polar_REST_API();
         foreach ($auto_publish_pages as $auto_publish_page) {

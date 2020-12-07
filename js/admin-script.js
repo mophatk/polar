@@ -95,7 +95,7 @@
                     $('#polar-error-msg').html(res.message).css({color:'green'}).delay(2000).fadeOut();
                     dropdown.empty();
                     $.each(res.result, function(key, value) {
-                      if(key == "fap_user_accounts"){
+                      if(key == "polar_user_accounts"){
                        $.each(this, function(k, v) {
                         if(k == "auth_accounts"){
                             $.each(this, function(akey, avalue) {

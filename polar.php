@@ -93,10 +93,6 @@ class Polar {
      * Starts session on admin_init hook
      */
     function plugin_init() {
-        if (!session_id()) {
-            session_start();
-            session_write_close();
-        }
         load_plugin_textdomain( 'polar', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
     }
 
@@ -129,7 +125,6 @@ class Polar {
     function admin_footer_text( $text ){
         if ( isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'polar') {
             $link = 'https://wordpress.org/support/plugin/polar/reviews/#new-post';
-            $pro_link = 'https://localhost/wordpress/';
             $text = 'Enjoyed Polar? <a href="' . $link . '" target="_blank">Please leave us a ★★★★★ rating</a> We really appreciate your support! | Try premium version of <a href="' . $pro_link . '" target="_blank">Polar Premium</a> - more features, more power!';
             return $text;
         } else {
@@ -236,12 +231,12 @@ class Polar {
         if(!empty($user_accounts)) {
             $fb_sess_data =
              array(
-                'fap_user_cache' => array(
+                'polar_user_cache' => array(
                                     'name' => $user_accounts['fb_user_name'],
                                     'id'   => $user_accounts['fb_user_id'],
                 ),
-                'fap_user_id'       => $user_accounts['fb_user_id'],
-                'fap_user_accounts' => $user_accounts,
+                'polar_user_id'       => $user_accounts['fb_user_id'],
+                'polar_user_accounts' => $user_accounts,
             );
             $polar_user_details = $fb_sess_data;
             return $polar_user_details;

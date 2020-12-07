@@ -1,7 +1,7 @@
 <?php 
 defined('ABSPATH') or die('No script kiddies please!');
 
-$_POST = array_map('stripslashes_deep', $_POST);
+$_POST = array_map(sanitize_text_field($_POST));
 
 $account_details = $_POST['account_details'];
 
