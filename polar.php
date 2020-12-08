@@ -125,7 +125,7 @@ class Polar {
     function admin_footer_text( $text ){
         if ( isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'polar') {
             $link = 'https://wordpress.org/support/plugin/polar/reviews/#new-post';
-            $text = 'Enjoyed Polar? <a href="' . $link . '" target="_blank">Please leave us a ★★★★★ rating</a> We really appreciate your support! | Try premium version of <a href="' . $pro_link . '" target="_blank">Polar Premium</a> - more features, more power!';
+            $text = 'Enjoyed Polar? <a href="' . $link . '" target="_blank">Please leave us a ★★★★★ rating</a> We really appreciate your support!;
             return $text;
         } else {
             return $text;
